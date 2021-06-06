@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from .config import config_options
-from app import error
 
 
 config_name = "development"
@@ -11,4 +10,7 @@ app.config.from_object(config_options[config_name])
 
 bootstrap = Bootstrap(app)
 
-from . import views
+from .main import main as main_blueprint
+app.register_blueprint(main_blueprint)
+
+# from . import views
