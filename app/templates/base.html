@@ -8,7 +8,9 @@
 {% endblock %}
 
 <div class="container">
-   
+    {% block navbar %}
+    {% include 'navigation.html'%}
+    {% endblock %}
 
 
     {% block content %}
