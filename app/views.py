@@ -8,3 +8,10 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.errorhandler(404)
+def four_Ow_four(error):
+    '''
+    Function to render the 404 error page
+    '''
+    return render_template('fourowfour.html'),404
