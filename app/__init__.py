@@ -1,11 +1,12 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
 from .config import config_options
 
 config_name = "development"
 
-app = Flask (__name__)
+app = Flask (__name__, instance_relative_config=True)
 app.config.from_object(config_options[config_name])
 
-@app.route('/')
-def index():
-    return '<h2>hello world</h2>'
+bootstrap = Bootstrap(app)
+
+from . import views
