@@ -21,7 +21,7 @@ def article(id):
     article = get_article(id)
     #title = f"{article.title}"
 
-    return render_template("articles.html",article=article)
+    return render_template("articles.html",article=article, )
 
 @app.errorhandler(404)
 def four_Ow_four(error):
