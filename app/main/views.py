@@ -6,13 +6,11 @@ from ..request import get_article, get_sources
 @app.route("/")
 def index():
     """View root page function that returns the index page and its data"""
+
+
     news = get_sources()
     title = 'News - Get yourself newsed up'
     return render_template("index.html",title = title ,news=news)
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 
 @app.route("/news/<id>")
